@@ -1,4 +1,4 @@
-unit OAuthUtils;
+п»їunit OAuthUtils;
 
 interface
 
@@ -16,17 +16,17 @@ const
     '`','(',')','#', #$7F..#$FF];
   UnixStartDate : TDateTime = 25569;
 
-//работа с URL'ом
+//СЂР°Р±РѕС‚Р° СЃ URL'РѕРј
 function HTTPEncode(const AStr: AnsiString): AnsiString;
 function UrlDecode(const Url : String) : String;
 function UrlEncode(const S : String) : String;
-//шифрование данных
+//С€РёС„СЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С…
 function EncodeTriplet(const Value: AnsiString; Delimiter: AnsiChar;
   Specials: TSpecials): AnsiString;
 function Base64Encode_(const Input: TBytes): string;
 function EncryptHMACSha1(Input, AKey: string): TBytes;
 function MD5(const Value:string):string;
-//вспомогательные функции
+//РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё
 function DateTimeToUnix(ConvDate: TDateTime): Longint;
 function XDigit(Ch : Char) : Integer;
 function IsXDigit(Ch : Char) : Boolean;

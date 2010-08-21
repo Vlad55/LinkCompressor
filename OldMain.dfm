@@ -1015,7 +1015,7 @@ object OldMainForm: TOldMainForm
   end
   object ApplicationEvents1: TApplicationEvents
     OnShowHint = ApplicationEvents1ShowHint
-    Left = 264
-    Top = 240
+    Left = 254
+    Top = 232
   end
 end

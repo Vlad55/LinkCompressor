@@ -1,13 +1,13 @@
-unit BitlyAPI;
+п»їunit BitlyAPI;
 
 interface
 
 uses SysUtils, Classes, httpsend, TypInfo, dialogs;
 
 resourcestring
-  rcValidateError = 'BIT.LY: Недействительное значение API-key или Login';
-  rcQueryError = 'Ошибка выполнения запроса';
-  rcOutputFormatError = 'Формат %s не поддерживается в запросе %s';
+  rcValidateError = 'BIT.LY: РќРµРґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ API-key РёР»Рё Login';
+  rcQueryError = 'РћС€РёР±РєР° РІС‹РїРѕР»РЅРµРЅРёСЏ Р·Р°РїСЂРѕСЃР°';
+  rcOutputFormatError = 'Р¤РѕСЂРјР°С‚ %s РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ РІ Р·Р°РїСЂРѕСЃРµ %s';
 
 const
   APIURL = 'http://api.bit.ly/v3/%s?login=%s&apiKey=%s&%s';

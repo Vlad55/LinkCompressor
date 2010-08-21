@@ -1,4 +1,4 @@
-unit common;
+п»їunit common;
 
 interface
 
@@ -7,8 +7,8 @@ uses OAuth_ICS, Classes, SysUtils, Forms, Dialogs,SHDocVw,
   OverbyteIcsHttpProt,OAuthUtils, DateUtils,uLkJSON;
 
 const
-  ConsumerKey = 'jYpw98mAWkIHT7JSBn7w';
-  ConsumerSecret = 'XlidAyVXdhLv1uQnxmmk0At83NJiAE7PJTssJGPBu4';
+  ConsumerKey = '';
+  ConsumerSecret = '';
   ProgName = 'LinkCompressor';
   CallbackURL = 'http://www.webdelphi.ru';
 
@@ -204,7 +204,7 @@ begin
     XML:=TNativeXml.Create;
     XML.ReadFromString(Responce);
     if XML.Root.Name='hash' then
-      MessageDlg('Во время выполнения запроса произошла ошибка "'+XML.Root.ReadString('error')+'"',mtError,[mbOK],0);
+      MessageDlg('Р’Рѕ РІСЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ Р·Р°РїСЂРѕСЃР° РїСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° "'+XML.Root.ReadString('error')+'"',mtError,[mbOK],0);
   finally
     FreeAndNil(XMl);
   end;

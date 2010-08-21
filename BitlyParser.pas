@@ -1,11 +1,11 @@
-unit BitlyParser;
+п»їunit BitlyParser;
 
 interface
 
 uses SysUtils, Classes, NativeXML,BitlyAPI, Generics.Collections;
 
 resourcestring
-  rcErrorResponse='Ответ сервера bit.ly: %s';
+  rcErrorResponse='РћС‚РІРµС‚ СЃРµСЂРІРµСЂР° bit.ly: %s';
 
 type
   Tag_ShortURL = Record

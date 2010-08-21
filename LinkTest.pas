@@ -1,4 +1,4 @@
-unit LinkTest;
+п»їunit LinkTest;
 
 interface
 
@@ -99,7 +99,7 @@ if LowerCase(Trim(FMimeType))='text/html' then
     for I := 0 to DocA.length - 1 do
       begin
         DocElement:=DocA.item(i,0)as IHTMLElement;
-        FiframeList.Add(DocElement.innerText) //читаем текст внутри тега
+        FiframeList.Add(DocElement.innerText) //С‡РёС‚Р°РµРј С‚РµРєСЃС‚ РІРЅСѓС‚СЂРё С‚РµРіР°
       end;
   end;
 end;

@@ -1,4 +1,4 @@
-unit uShorter;
+﻿unit uShorter;
 
 interface
 

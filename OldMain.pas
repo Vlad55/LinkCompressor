@@ -1,4 +1,4 @@
-unit OldMain;
+п»їunit OldMain;
 
 interface
 
@@ -145,13 +145,13 @@ begin
   begin
     r := StatusBar1.ClientRect;
     r.Right := StatusBar1.Panels[0].Width;
-    // на какой панели находится мышь
+    // РЅР° РєР°РєРѕР№ РїР°РЅРµР»Рё РЅР°С…РѕРґРёС‚СЃСЏ РјС‹С€СЊ
     for idx := 0 to -1 + StatusBar1.Panels.Count do
     begin
       if r.Right > HintInfo.CursorPos.X then
       begin
         HintInfo.CursorRect := r;
-        // обеспечиваем подсказку для панели, где мышь
+        // РѕР±РµСЃРїРµС‡РёРІР°РµРј РїРѕРґСЃРєР°Р·РєСѓ РґР»СЏ РїР°РЅРµР»Рё, РіРґРµ РјС‹С€СЊ
         case idx of
           1:
             begin
@@ -209,10 +209,10 @@ end;
 procedure TOldMainForm.Button1Click(Sender: TObject);
 begin
   // HHCtrl:=THHCtrl.Create(self);
-  // HHCtrl.syncURL('D:\Google Login\Сокращатель ссылок\OldInterface\Help\Table of Contents.hhc');
-  // HHCtrl.TextPopup('Текст подсказки','Times New Roman',5,5,clYellow,clBlue);
+  // HHCtrl.syncURL('D:\Google Login\РЎРѕРєСЂР°С‰Р°С‚РµР»СЊ СЃСЃС‹Р»РѕРє\OldInterface\Help\Table of Contents.hhc');
+  // HHCtrl.TextPopup('РўРµРєСЃС‚ РїРѕРґСЃРєР°Р·РєРё','Times New Roman',5,5,clYellow,clBlue);
   // HHCtrl.Click;
-  // HtmlHelpA(handle,PAnsiChar('D:\Google Login\Сокращатель ссылок\OldInterface\Help\help.chm'),HH_DISPLAY_TOPIC,0)
+  // HtmlHelpA(handle,PAnsiChar('D:\Google Login\РЎРѕРєСЂР°С‰Р°С‚РµР»СЊ СЃСЃС‹Р»РѕРє\OldInterface\Help\help.chm'),HH_DISPLAY_TOPIC,0)
 end;
 
 procedure TOldMainForm.ChangeVisibles;
@@ -390,11 +390,11 @@ end;
 
 procedure TOldMainForm.FormResize(Sender: TObject);
 begin
-  // изменяем размеры и положение контролов
+  // РёР·РјРµРЅСЏРµРј СЂР°Р·РјРµСЂС‹ Рё РїРѕР»РѕР¶РµРЅРёРµ РєРѕРЅС‚СЂРѕР»РѕРІ
   ComboBox1.Width := OldMainForm.Width - 73;
   SpeedButton5.Left := ComboBox1.Left + ComboBox1.Width + 2;
   SpeedButton10.Left := (OldMainForm.Width shr 1) - (SpeedButton10.Width shr 1);
-  // изменяем размеры Edit'ов сервисов
+  // РёР·РјРµРЅСЏРµРј СЂР°Р·РјРµСЂС‹ Edit'РѕРІ СЃРµСЂРІРёСЃРѕРІ
   Edit4.Width := OldMainForm.Width - 196;
   Edit1.Width := Edit4.Width;
   Edit2.Width := Edit4.Width;
@@ -626,7 +626,7 @@ procedure TOldMainForm.SpeedButton5Click(Sender: TObject);
 begin
   if TShorter.IsLink(ComboBox1.Text) then
   begin
-    // жмем ссылки
+    // Р¶РјРµРј СЃСЃС‹Р»РєРё
     if CheckBox2.Checked then
       BitLyCompress;
     if CheckBox3.Checked then
