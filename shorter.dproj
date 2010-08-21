@@ -1,0 +1,174 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{EA15BBC6-B0ED-4347-AF2F-A2D8A61B176C}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>shorter.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_OutputDRCFile>true</DCC_OutputDRCFile>
+			<DCC_UsePackage>vclx;vcl;vclimg;dbrtl;Rave77VCL;bdertl;rtl;vclactnband;vcldb;vcldbx;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;VclSmp;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapServer;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;acnt2010_R;TOptions_pack;SGChecker;GoogleLogin;gmail_pack;Jcl;JclVcl;JvCoreD14R;JvSystemD14R;JvStdCtrlsD14R;JvAppFrmD14R;JvBandsD14R;JvDBD14R;JvDlgsD14R;JvBDED14R;JvCmpD14R;JvCryptD14R;JvCtrlsD14R;JvCustomD14R;JvDockingD14R;JvDotNetCtrlsD14R;JvEDID14R;JvGlobusD14R;JvHMID14R;JvInterpreterD14R;JvJansD14R;JvManagedThreadsD14R;JvMMD14R;JvNetD14R;JvPageCompsD14R;JvPluginD14R;JvPrintPreviewD14R;JvRuntimeDesignD14R;JvTimeFrameworkD14R;JvValidatorsD14R;JvWizardD14R;JvXPCtrlsD14R;wdSiteAnalys;SynEdit_D5;OverbyteIcsD2010Run</DCC_UsePackage>
+			<DCC_DependencyCheckOutputName>shorter.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_Platform>x86</DCC_Platform>
+			<DCC_E>false</DCC_E>
+			<DCC_N>false</DCC_N>
+			<DCC_S>false</DCC_S>
+			<DCC_F>false</DCC_F>
+			<DCC_K>false</DCC_K>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="shorter.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="uShorter.pas"/>
+			<DCCReference Include="uAbout.pas">
+				<Form>fAbout</Form>
+			</DCCReference>
+			<DCCReference Include="shrtOptions.pas">
+				<Form>FOptions</Form>
+			</DCCReference>
+			<DCCReference Include="uTwitter.pas">
+				<Form>fTwitter</Form>
+			</DCCReference>
+			<DCCReference Include="uReport.pas">
+				<Form>ContactForm</Form>
+			</DCCReference>
+			<DCCReference Include="BitlyAPI.pas"/>
+			<DCCReference Include="BitlyParser.pas"/>
+			<DCCReference Include="OAuth_ICS.pas"/>
+			<DCCReference Include="OAuthUtils.pas"/>
+			<DCCReference Include="TwitAuth.pas">
+				<Form>AuthForm</Form>
+			</DCCReference>
+			<DCCReference Include="common.pas"/>
+			<DCCReference Include="OldMain.pas">
+				<Form>OldMainForm</Form>
+			</DCCReference>
+			<DCCReference Include="LCExceptions.pas"/>
+			<DCCReference Include="uFFAuth.pas">
+				<Form>ffauthform</Form>
+			</DCCReference>
+			<DCCReference Include="uFFSender.pas">
+				<Form>fFFSender</Form>
+			</DCCReference>
+			<DCCReference Include="udeshifr.pas">
+				<Form>fDeshifr</Form>
+			</DCCReference>
+			<DCCReference Include="LinkTest.pas"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">shorter.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">3</VersionInfo>
+						<VersionInfo Name="Release">2</VersionInfo>
+						<VersionInfo Name="Build">209</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">WebDelphi.ru</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Программа для сжатия ссылок</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.3.2.209</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<Language>
+						<Language Name="ProjectLang">$00000419</Language>
+					</Language>
+					<Resource_DLL_Projects>
+						<Resource_DLL_Projects Name="Item0">Английский (Великобритания)*$00000809*ENG*ENG</Resource_DLL_Projects>
+						<Resource_DLL_Projects Name="Item1">Английский (США)*$00000409*ENU*ENU</Resource_DLL_Projects>
+						<Resource_DLL_Projects Name="Item2">Белорусский (Беларусь)*$00000423*BEL*BEL</Resource_DLL_Projects>
+						<Resource_DLL_Projects Name="Item3">Русский (Россия)*$00000419*RUS*RUS</Resource_DLL_Projects>
+						<Resource_DLL_Projects Name="Item4">Французский (Франция)*$0000040C*FRA*FRA</Resource_DLL_Projects>
+						<Resource_DLL_Projects Name="Item5">Английский (Канада)*$00001009*ENC*ENC</Resource_DLL_Projects>
+					</Resource_DLL_Projects>
+					<Misc_Files>
+						<Misc_Files Name="Item0">shrt_main.dfm*Forms</Misc_Files>
+						<Misc_Files Name="Item1">shrtOptions.dfm*Forms</Misc_Files>
+						<Misc_Files Name="Item2">TwitAuth.dfm*Forms</Misc_Files>
+						<Misc_Files Name="Item3">uAbout.dfm*Forms</Misc_Files>
+						<Misc_Files Name="Item4">uLinkBase.dfm*Forms</Misc_Files>
+						<Misc_Files Name="Item5">uReport.dfm*Forms</Misc_Files>
+						<Misc_Files Name="Item6">uTwitter.dfm*Forms</Misc_Files>
+					</Misc_Files>
+					<RDP_Source_Files>
+						<RDP_Source_Files Name="Item0">shrt_main.dfm</RDP_Source_Files>
+						<RDP_Source_Files Name="Item1">uLinkBase.dfm</RDP_Source_Files>
+						<RDP_Source_Files Name="Item2">uAbout.dfm</RDP_Source_Files>
+						<RDP_Source_Files Name="Item3">shrtOptions.dfm</RDP_Source_Files>
+						<RDP_Source_Files Name="Item4">uTwitter.dfm</RDP_Source_Files>
+						<RDP_Source_Files Name="Item5">uReport.dfm</RDP_Source_Files>
+						<RDP_Source_Files Name="Item6">TwitAuth.dfm</RDP_Source_Files>
+						<RDP_Source_Files Name="Item7">OldMain.dfm</RDP_Source_Files>
+						<RDP_Source_Files Name="Item8">shorter.drc</RDP_Source_Files>
+					</RDP_Source_Files>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
